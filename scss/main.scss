@@ -1,5 +1,9 @@
-body {
-  background-color: var(--background-primary);
-  color: var(--primary-text-color);
-  font-family: 'Roboto', sans-serif;
-}
+// UTILS
+@import './utils/variable';
+@import './utils/visually-hidden';
+
+// BASE
+@import './base/common';
+
+// COPPONENTS
+@import './components/container';
