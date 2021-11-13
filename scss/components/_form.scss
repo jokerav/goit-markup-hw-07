@@ -58,7 +58,11 @@
   }
 }
 
-.comment-label {
+// .comment-label {
+//   margin-bottom: 20px;
+// }
+.comment-container {
+  margin-top: 4px;
   margin-bottom: 20px;
 }
 .modal-comment {
@@ -69,7 +73,7 @@
   line-height: 1.66;
   letter-spacing: 0.01em;
   color: var(--primary-text-color);
-  margin-top: 4px;
+  // margin-top: 4px;
   &::placeholder {
     font-family: Roboto;
     font-style: normal;
