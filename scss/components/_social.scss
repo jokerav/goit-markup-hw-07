@@ -6,10 +6,11 @@
   width: 44px;
   height: 44px;
   margin-right: 10px;
+  &:last-child {
+    margin-right: 0;
+  }
 }
-.social-item:last-child {
-  margin-right: 0;
-}
+
 .social-link {
   background-color: var(--background-primary);
   color: var(--social-items-our-client);
@@ -22,15 +23,13 @@
   transition-property: background-color, color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
+  &:hover,
+  &:focus {
+    background-color: var(--accent);
+    color: var(--background-primary);
+  }
 }
 
 .social-icon {
   fill: currentColor;
 }
-
-.social-link:hover,
-.social-link:focus {
-  background-color: var(--accent);
-  color: var(--background-primary);
-}
-/* Класс social item общий в карточках команда и футере */

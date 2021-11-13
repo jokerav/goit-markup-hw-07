@@ -30,8 +30,8 @@
 }
 .modal-close-icon {
   transition: fill var(--transition-duration) var(--timing-function);
-}
-.modal-close:hover .modal-close-icon,
-.modal-close:focus .modal-close-icon {
-  fill: currentColor;
+  .modal-close:hover &,
+  .modal-close:focus & {
+    fill: currentColor;
+  }
 }

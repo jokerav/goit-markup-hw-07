@@ -35,8 +35,15 @@
   margin: -1px;
 }
 
-* {
+html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
 body {
@@ -143,17 +150,15 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
-.social-icon {
-  fill: currentColor;
-}
-
-.social-link:hover,
-.social-link:focus {
+.social-link:hover, .social-link:focus {
   background-color: var(--accent);
   color: var(--background-primary);
 }
 
-/* Класс social item общий в карточках команда и футере */
+.social-icon {
+  fill: currentColor;
+}
+
 /* кнопки-фильтры в портфолио */
 .portfolio-btns {
   display: flex;
@@ -178,6 +183,12 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
+.portfolio-btn:hover, .portfolio-btn:focus {
+  background-color: var(--accent);
+  color: var(--background-primary);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 .portfolio-btn-active {
   background-color: var(--accent);
   color: var(--background-primary);
@@ -185,13 +196,6 @@ h5 {
 
 .btn-item:not(:last-child) {
   margin-right: 8px;
-}
-
-.portfolio-btn:hover,
-.portfolio-btn:focus {
-  background-color: var(--accent);
-  color: var(--background-primary);
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .backdrop {
@@ -298,17 +302,17 @@ h5 {
   margin-bottom: 10px;
 }
 
+.modal-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
 .modal-input-icon {
   position: absolute;
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
   transition: fill var(--transition-duration) var(--timing-function);
-}
-
-.modal-input:focus {
-  border-color: var(--accent);
-  outline: none;
 }
 
 .modal-input:focus + .modal-input-icon {
@@ -394,8 +398,7 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
-.form-btn:focus,
-.form-btn:hover {
+.form-btn:focus, .form-btn:hover {
   background-color: var(--hero-btn-hover);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -459,6 +462,14 @@ h5 {
   position: relative;
 }
 
+.menu-link:hover, .menu-link:focus {
+  color: var(--accent);
+}
+
+.current {
+  color: var(--accent);
+}
+
 .current::after {
   content: '';
   display: inline-block;
@@ -469,19 +480,6 @@ h5 {
   height: 4px;
   background-color: var(--accent);
   border-radius: 2px;
-}
-
-.menu-link:hover,
-.menu-link:focus,
-.contact-link:hover,
-.contact-link:focus,
-.footer-link:focus,
-.footer-link:hover {
-  color: var(--accent);
-}
-
-.current {
-  color: var(--accent);
 }
 
 /* контакты */
@@ -495,6 +493,10 @@ h5 {
 .contacts-item {
   display: flex;
   align-items: center;
+}
+
+.contacts-item:not(:last-child) {
+  margin-right: 50px;
 }
 
 .contact-icon {
@@ -512,10 +514,6 @@ h5 {
   fill: var(--accent);
 }
 
-.contacts-item:not(:last-child) {
-  margin-right: 50px;
-}
-
 .contact-link {
   display: flex;
   align-items: center;
@@ -527,6 +525,10 @@ h5 {
   transition-property: color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
+}
+
+.contact-link:focus, .contact-link:hover {
+  color: var(--accent);
 }
 
 /* Секция герой */
@@ -584,8 +586,7 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
-.hero-btn:focus,
-.hero-btn:hover {
+.hero-btn:focus, .hero-btn:hover {
   background-color: var(--hero-btn-hover);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -748,6 +749,10 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
+.footer-link:hover, .footer-link:focus {
+  color: var(--accent);
+}
+
 .join {
   color: var(--background-primary);
   font-weight: 700;
@@ -777,13 +782,12 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
-.footer-social-icon {
-  fill: var(--background-primary);
+.footer-social-link:hover, .footer-social-link:focus {
+  background-color: var(--accent);
 }
 
-.footer-social-link:hover,
-.footer-social-link:focus {
-  background-color: var(--accent);
+.footer-social-icon {
+  fill: var(--background-primary);
 }
 
 .subscribe-form {
@@ -830,8 +834,7 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
-.subscribe-btn:focus,
-.subscribe-btn:hover {
+.subscribe-btn:focus, .subscribe-btn:hover {
   background-color: var(--hero-btn-hover);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -868,6 +871,10 @@ h5 {
   height: 92px;
 }
 
+.client-item:last-child {
+  margin-right: 0;
+}
+
 .client-link {
   display: flex;
   justify-content: center;
@@ -882,8 +889,9 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
-.client-item:last-child {
-  margin-right: 0;
+.client-link:hover, .client-link:focus {
+  border: 1px solid var(--accent);
+  color: var(--accent);
 }
 
 .client-icon {
@@ -891,12 +899,6 @@ h5 {
   transition-property: fill;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--timing-function);
-}
-
-.client-link:hover,
-.client-link:focus {
-  border: 1px solid var(--accent);
-  color: var(--accent);
 }
 
 /* Примеры работ в портфолио */
@@ -929,6 +931,10 @@ h5 {
   transition-timing-function: var(--timing-function);
 }
 
+.exemple-link:focus, .exemple-link:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .exemple-overlay-box {
   position: relative;
   overflow: hidden;
@@ -950,13 +956,6 @@ h5 {
   padding-right: 24px;
 }
 
-.exemple-overlay .text {
-  color: var(--background-primary);
-  font-size: 18px;
-  line-height: 1.55;
-  letter-spacing: 0.03em;
-}
-
 .exemple-overlay-box:hover .exemple-overlay,
 .exemple-overlay-box:focus .exemple-overlay,
 .exemple-link:hover .exemple-overlay,
@@ -964,9 +963,11 @@ h5 {
   transform: translateY(0);
 }
 
-.exemple-link:hover,
-.exemple-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+.exemple-overlay-text {
+  color: var(--background-primary);
+  font-size: 18px;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
 }
 
 .exemples-text-container {
